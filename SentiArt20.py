@@ -49,6 +49,6 @@ df.AAPz.hist()
 df.AAPz.hist()
 
 df.set_index(df.index,inplace=True)
-df.plot(kind='bar',alpha=0.75, rot=90)
+df.plot(kind='bar',alpha=0.75, rot=0)
 plt.xlabel("Sentence #")
 plt.show()              
