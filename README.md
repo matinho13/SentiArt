@@ -14,7 +14,7 @@ SentiArt has been validated with human rating data in several published studies:
     Jacobs, A. M., & Kinder, A. (2019). Computing the Affective-Aesthetic Potential of Literary Texts, Artifical Intelligence, 1:1, 11–27; doi:10.3390/ai1010002 
     Jacobs AM, Herrmann B, Lauer G, Lüdtke J and Schroeder S (2020) Sentiment Analysis of Children and Youth Literature: Is There a Pollyanna Effect? Front. Psychol. 11:574746. doi: 10.3389/fpsyg.2020.574746 
 
-## License
+### License
 Copyright (c) 2011-2017 GitHub Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
