@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Nov 16 09:24:58 2020
-SentiArt20.py basic SA for literary texts
+SentiArt20.py basic sentiment analysis tool for literary texts
 @author: ajacobs@zedat.fu-berlin.de
 """
 # get packages
