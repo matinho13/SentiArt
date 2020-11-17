@@ -28,13 +28,19 @@ sa = pd.read_excel(TC, index_col=0)
 sents = sent_tokenize(raw)
 tokens = [word_tokenize(s) for s in sents]
 
+#compute mean AAPz (or mean ang_z etc.) per sentence
 sent_mean_AAPz = []
 for t in tokens:
     dt = sa.query('wordUC in @t')
     sent_mean_AAPz.append(dt.AAPz.mean())
-
+# print results
 for s,aapz in zip(sents,sent_mean_AAPz):
     print(s,round(aapz,3))
+# save results
+df = pd.DataFrame()
+df['sent'] = sents
+df['AAPz'] = sent_mean_AAPz
+df.to_csv('results.txt')
 
 
 
