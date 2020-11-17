@@ -45,7 +45,7 @@ df['sent'] = sents
 df['AAPz'] = sent_mean_AAPz
 df.to_csv('results.txt')
 
-#plot AAPz
+#plot AAPz, fear_z etc.
 df.AAPz.hist()
 
 df.set_index(df.index,inplace=True)
