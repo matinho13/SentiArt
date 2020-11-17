@@ -36,12 +36,13 @@ for t in tokens:
 # print results
 for s,aapz in zip(sents,sent_mean_AAPz):
     print(s,round(aapz,3))
-# save results
+# save results as pandas df
 df = pd.DataFrame()
 df['sent'] = sents
 df['AAPz'] = sent_mean_AAPz
 df.to_csv('results.txt')
 
-
+#plot AAPz
+df.AAPz.hist()
 
               
