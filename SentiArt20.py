@@ -9,7 +9,8 @@ SentiArt20.py basic sentiment analysis tool for literary texts
 import os,codecs
 import pandas as pd
 import nltk
-from nltk import *
+from nltk import*
+import matplotlib.pyplot as plt
 
 # open a short sample text
 fn = 'momo_4s.txt'
@@ -45,10 +46,8 @@ df.to_csv('results.txt')
 #plot AAPz
 df.AAPz.hist()
 
-#plot AAPz, fear_z etc.
-df.AAPz.hist()
-
 df.set_index(df.index,inplace=True)
 df.plot(kind='bar',alpha=0.75, rot=0)
 plt.xlabel("Sentence #")
-plt.show()              
+plt.ylabel("Sentiment Value (z)")
+plt.show()
