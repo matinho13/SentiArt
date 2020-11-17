@@ -25,9 +25,9 @@ they provide the affective-aesthetic potential (AAP) and discrete emotion values
 for each word, based on their semantic relatedness (as computed by w2v) with labels (semantic anchors) described in the publications mentioned in readme.md
 """
 
-TC = '120kSentiArt_DE.xlsx' # for German texts
-#TC = '250kSentiArt_EN.xlsx' # for English texts
-sa = pd.read_excel(TC, index_col=0)                     
+#TC = '120kSentiArt_DE.xlsx' # for German texts
+TC = '250kSentiArt_EN.xlsx' # for English texts
+sa = pd.read_excel(TC)                     
 sents = sent_tokenize(raw)
 tokens = [word_tokenize(s) for s in sents]
 
