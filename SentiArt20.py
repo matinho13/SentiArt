@@ -14,7 +14,7 @@ from nltk import *
 # open a short sample text
 fn = 'momo_4s.txt'
 with codecs.open(fn,'r','utf-8') as f:
-    raw = f.read()
+    raw = f.read().replace('\n',' ')
 
 # get the table with sentiment values. they are based on a vector space model (w2v, skipgram, 300d) and the label list published in:
 # https://www.frontiersin.org/articles/10.3389/fnhum.2017.00622/full#supplementary-material; https://www.frontiersin.org/articles/10.3389/fpsyg.2020.574746/full
