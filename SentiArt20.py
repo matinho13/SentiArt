@@ -53,3 +53,16 @@ df.plot(kind='bar',alpha=0.75, rot=0)
 plt.xlabel("Sentence #")
 plt.ylabel("Sentiment Value (z)")
 plt.show()
+
+#get most beautiful and ugliest words in corpus
+topb = sa.sort_values(by=['AAPz']).tail()
+print('top beauty words','\n',topb.word)
+print()
+topu = sa.sort_values(by=['AAPz']).head()
+print('top ugly words','\n',topu.word)
+
+#get most beautiful and ugliest sents in text
+print('top beauty sent','\n',df.sort_values(by=['AAPz']).tail(1))
+print()
+print('top ugly sent','\n',df.sort_values(by=['AAPz']).head(1))
+
