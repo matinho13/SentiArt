@@ -45,7 +45,7 @@ df.to_csv('results.txt')
 #plot AAPz
 df.AAPz.hist()
 
-#plot AAPz
+#plot AAPz, fear_z etc.
 df.AAPz.hist()
 
 df.set_index(df.index,inplace=True)
