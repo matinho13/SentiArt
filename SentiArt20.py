@@ -45,4 +45,10 @@ df.to_csv('results.txt')
 #plot AAPz
 df.AAPz.hist()
 
-              
+#plot AAPz
+df.AAPz.hist()
+
+df.set_index(df.index,inplace=True)
+df.plot(kind='bar',alpha=0.75, rot=90)
+plt.xlabel("Sentence #")
+plt.show()              
