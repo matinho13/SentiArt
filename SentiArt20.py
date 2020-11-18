@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Nov 16 09:24:58 2020
-SentiArt20.py basic sentiment analysis tool for literary texts
+SentiArt1.0.py basic sentiment analysis tool for literary texts
 @author: ajacobs@zedat.fu-berlin.de
 """
 # get packages
@@ -12,10 +12,6 @@ import nltk
 from nltk import*
 import matplotlib.pyplot as plt
 
-# open a short sample text
-fn = 'momo_4s.txt'
-with codecs.open(fn,'r','utf-8') as f:
-    raw = f.read().replace('\n',' ')
 
 """ get the table with sentiment values (e.g., AAPz, fear_z). 
 these are based on a vector space model (w2v, skipgram, 300d) and the label list published in:
@@ -25,29 +21,34 @@ they provide the affective-aesthetic potential (AAP) and discrete emotion values
 for each word, based on their semantic relatedness (as computed by w2v) with labels (semantic anchors) described in the publications mentioned in readme.md
 """
 
-TC = '120kSentiArt_DE.xlsx' # for German texts
-#TC = '250kSentiArt_EN.xlsx' # for English texts
-sa = pd.read_excel(TC)                     
-sents = sent_tokenize(raw)
-tokens = [word_tokenize(s) for s in sents]
+TC = '250kSentiArt_EN.xlsx' # for English texts
+#TC = '120kSentiArt_DE.xlsx' # for German texts
+sa = pd.read_excel(TC) #           
 
-#compute mean AAPz (or mean ang_z etc.) per sentence
-sent_mean_AAPz = []
+# open a short sample text
+#fn = 'momo_4s.txt' # GERMAN
+fn = 'harry.txt' # ENGLISH
+with codecs.open(fn,'r','utf-8') as f:
+    raw = f.read().replace('\n',' ').replace('\r','').replace('!',' ')  
+sents = sent_tokenize(raw)
+tokens = [[t for t in word_tokenize(s) if t.isalpha()] for s in sents]
+
+#compute mean AAP (or mean fear etc.) per sentence
+sent_mean_AAPz = [];sent_mean_fear_z = []
 for t in tokens:
-    dt = sa.query('wordUC in @t')
+    dt = sa.query('word in @t')
     sent_mean_AAPz.append(dt.AAPz.mean())
-# print results
-for s,aapz in zip(sents,sent_mean_AAPz):
-    print(s,round(aapz,3))
-# save results as pandas df
+    sent_mean_fear_z.append(dt.fear_z.mean())
+
+#panda & save results
 df = pd.DataFrame()
-df['sent'] = sents
+df['sent'] = tokens
 df['AAPz'] = sent_mean_AAPz
-df.to_csv('results.txt')
+df['fear_z'] = sent_mean_fear_z
+df = round(df,3)
+#df.to_csv('results.txt')
 
 #plot AAPz, fear_z etc.
-df.AAPz.hist()
-
 df.set_index(df.index,inplace=True)
 df.plot(kind='bar',alpha=0.75, rot=0)
 plt.xlabel("Sentence #")
@@ -61,8 +62,8 @@ print()
 topu = sa.sort_values(by=['AAPz']).head()
 print('top ugly words','\n',topu.word)
 
-#get most beautiful and ugliest sents in text
-print('top beauty sent','\n',df.sort_values(by=['AAPz']).tail(1))
+#get most beautiful and fearful sents in text
+print('top AAP sent','\n',df.sort_values(by=['AAPz']).tail(1))
 print()
-print('top ugly sent','\n',df.sort_values(by=['AAPz']).head(1))
+print('top FEAR sent','\n',df.sort_values(by=['fear_z']).tail(1))
 
