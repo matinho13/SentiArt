@@ -11,7 +11,7 @@ SentiArt was created for non-commercial use only: if you use it please cite:
 SentiArt has been validated with human rating data in several published studies:
     
     Jacobs AM (2017) Quantifying the Beauty of Words: A Neurocognitive Poetics Perspective. Front. Hum. Neurosci. 11:622. doi: 10.3389/fnhum.2017.00622
-    Jacobs, AM & Kinder, A (2019). Computing the Affective-Aesthetic Potential of Literary Texts, Artifical Intelligence, 1:1, 11–27; doi:10.3390/ai1010002 
+    Jacobs AM & Kinder A (2019). Computing the Affective-Aesthetic Potential of Literary Texts, Artifical Intelligence, 1:1, 11–27; doi:10.3390/ai1010002 
     Jacobs AM, Herrmann B, Lauer G, Lüdtke J and Schroeder S (2020) Sentiment Analysis of Children and Youth Literature: Is There a Pollyanna Effect? Front. Psychol. 11:574746. doi: 10.3389/fpsyg.2020.574746 
 
 ### License
