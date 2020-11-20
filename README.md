@@ -15,7 +15,10 @@ SentiArt has been validated with human rating data in several published studies:
     Jacobs AM, Herrmann B, Lauer G, Lüdtke J and Schroeder S (2020) Sentiment Analysis of Children and Youth Literature: Is There a Pollyanna Effect? Front. Psychol. 11:574746. doi: 10.3389/fpsyg.2020.574746 
     
 ## Vector space models / vsm
-The VSMs created to compute the SentiArt .xlsx tables are too big to upload on github.
+The VSMs created to compute the SentiArt .xlsx tables are too big to upload on github. They can be obtained by the author via request to: sentiart0@gmail.com.
+The German VSM (skipgram, 300d) is based on the sdewac corpus which can be obtained at: https://www.ims.uni-stuttgart.de/forschung/ressourcen/korpora/sdewac/
+The English VSM (skipgram, 500d) is based on the Gutenberg English Literary Corpus (cf. https://www.frontiersin.org/articles/10.3389/fdigh.2018.00005/full) which can be obtained via email to the author.
+Both VSMs were created using the gensim library:https://github.com/RaRe-Technologies/gensim. 
 
 ### License
 Copyright (c) 2011-2017 GitHub Inc.
