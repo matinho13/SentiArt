@@ -16,7 +16,7 @@ SentiArt has been validated with human rating data in several published studies:
     
 ## Vector space models / vsm
 The VSMs created to compute the SentiArt .xlsx tables are too big to upload on github. They can be obtained by the author via request to: sentiart0@gmail.com.
-The German VSM (skipgram, 300d) is based on the sdewac corpus which can be obtained at: https://www.ims.uni-stuttgart.de/forschung/ressourcen/korpora/sdewac/. The English VSM (skipgram, 500d) is based on the Gutenberg English Literary Corpus (cf. https://www.frontiersin.org/articles/10.3389/fdigh.2018.00005/full) which can be obtained via email to the author.
+The German VSM (skipgram, 300d) is based on the sdewac corpus which can be obtained at: https://www.ims.uni-stuttgart.de/forschung/ressourcen/korpora/sdewac/. The English VSM (skipgram, 500d) is based on the Gutenberg Literary English Corpus (GLEC; cf. https://www.frontiersin.org/articles/10.3389/fdigh.2018.00005/full) which can be obtained via email to the author.
 Both VSMs were created using the gensim library:https://github.com/RaRe-Technologies/gensim. 
 
 ### License
